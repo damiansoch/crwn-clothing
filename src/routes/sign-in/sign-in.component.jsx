@@ -5,7 +5,6 @@ import {
 
 import SignUpForm from "../../components/sign-up-form/sign-up form.component";
 
-import { useState } from "react";
 
 const SignIn = () => {
   const logGoogleUser = async () => {
