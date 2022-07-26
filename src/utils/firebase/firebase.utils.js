@@ -8,6 +8,7 @@ import {
   createUserWithEmailAndPassword, // this is for eamil and password uth only
   signInWithEmailAndPassword, // this is for eamil and password uth only
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 //-------------setting up users
 import {
@@ -90,3 +91,10 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 };
 
 export const signOutUser = async () => await signOut(auth);
+
+// takes in two parameters, auth and callback
+// whenever aut status chanes, run callback
+export const onAuthStateChangedListener = (callback) => {
+  onAuthStateChanged(auth, callback);
+};
+//this is an open listener: it always listen for auth to change
