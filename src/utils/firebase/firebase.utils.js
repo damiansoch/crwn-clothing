@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword, // this is for eamil and password uth only
   signInWithEmailAndPassword, // this is for eamil and password uth only
+  signOut,
 } from "firebase/auth";
 //-------------setting up users
 import {
@@ -87,3 +88,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
